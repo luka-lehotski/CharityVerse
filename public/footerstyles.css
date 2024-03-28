@@ -1,0 +1,43 @@
+/* headerFooterStyles.css */
+
+/* Header Styles */
+.header {
+  background-color: rgb(0, 153, 153);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  flex: 1;
+  /* Grow to take remaining space */
+}
+
+.left-image,
+.right-image {
+  flex: 0 0 auto;
+  /* Do not grow or shrink, fixed size */
+}
+
+.left-image img,
+.right-image img {
+  width: 100px;
+  /* Adjust the width as needed */
+  height: auto;
+}
+
+/* Footer Styles */
+footer {
+  background-color: rgb(0, 153, 153);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-info {
+  margin-bottom: 10px;
+  color: rgb(230, 230, 255);
+}
