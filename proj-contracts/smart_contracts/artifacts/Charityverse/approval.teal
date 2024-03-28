@@ -1,0 +1,308 @@
+#pragma version 8
+intcblock 0 1 1000000
+bytecblock 0x 0x63757272656e746c795f726169736564 0x6f7267616e697a6174696f6e 0x7761676572 0x617070726f7665645f6279 0x62656e6566696369617279 0x6361757365
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l10
+txna ApplicationArgs 0
+pushbytes 0x61522e8f // "set_up_fundraiser(uint64,string,account)void"
+==
+bnz main_l9
+txna ApplicationArgs 0
+pushbytes 0xd611dbd8 // "approve()void"
+==
+bnz main_l8
+txna ApplicationArgs 0
+pushbytes 0x081c0213 // "donate(pay)string"
+==
+bnz main_l7
+txna ApplicationArgs 0
+pushbytes 0xe94a444d // "release_funds()void"
+==
+bnz main_l6
+err
+main_l6:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub releasefundscaster_9
+intc_1 // 1
+return
+main_l7:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub donatecaster_8
+intc_1 // 1
+return
+main_l8:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub approvecaster_7
+intc_1 // 1
+return
+main_l9:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setupfundraisercaster_6
+intc_1 // 1
+return
+main_l10:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l14
+txn OnCompletion
+intc_1 // OptIn
+==
+bnz main_l13
+err
+main_l13:
+txn ApplicationID
+intc_0 // 0
+!=
+assert
+callsub optin_1
+intc_1 // 1
+return
+main_l14:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+callsub create_0
+intc_1 // 1
+return
+
+// create
+create_0:
+proto 0 0
+bytec 4 // "approved_by"
+bytec_0 // ""
+app_global_put
+bytec 5 // "beneficiary"
+bytec_0 // ""
+app_global_put
+bytec 6 // "cause"
+bytec_0 // ""
+app_global_put
+bytec_1 // "currently_raised"
+intc_0 // 0
+app_global_put
+bytec_2 // "organization"
+bytec_0 // ""
+app_global_put
+bytec_3 // "wager"
+intc_0 // 0
+app_global_put
+bytec_2 // "organization"
+txn Sender
+app_global_put
+retsub
+
+// opt_in
+optin_1:
+proto 0 0
+intc_1 // 1
+return
+
+// set_up_fundraiser
+setupfundraiser_2:
+proto 3 0
+txn Sender
+global CreatorAddress
+==
+// unauthorized
+assert
+txn Sender
+bytec_2 // "organization"
+app_global_get
+==
+assert
+bytec_3 // "wager"
+frame_dig -3
+app_global_put
+bytec 6 // "cause"
+frame_dig -2
+extract 2 0
+app_global_put
+bytec 5 // "beneficiary"
+frame_dig -1
+txnas Accounts
+app_global_put
+retsub
+
+// approve
+approve_3:
+proto 0 0
+txn Sender
+global CurrentApplicationID
+app_opted_in
+// unauthorized
+assert
+txn Sender
+bytec_2 // "organization"
+app_global_get
+!=
+assert
+bytec 4 // "approved_by"
+txn Sender
+app_global_put
+retsub
+
+// donate
+donate_4:
+proto 1 1
+bytec_0 // ""
+txn Sender
+global CurrentApplicationID
+app_opted_in
+// unauthorized
+assert
+bytec 4 // "approved_by"
+app_global_get
+bytec_0 // ""
+!=
+assert
+bytec 6 // "cause"
+app_global_get
+bytec_0 // ""
+!=
+assert
+intc_1 // pay
+intc_1 // pay
+==
+assert
+frame_dig -1
+gtxns Receiver
+global CurrentApplicationAddress
+==
+assert
+bytec_1 // "currently_raised"
+bytec_1 // "currently_raised"
+app_global_get
+frame_dig -1
+gtxns Amount
+intc_2 // 1000000
+/
++
+app_global_put
+pushbytes 0x4876616c612056616d206e6120646f6e6163696a69 // "Hvala Vam na donaciji"
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// release_funds
+releasefunds_5:
+proto 0 0
+txn Sender
+bytec 5 // "beneficiary"
+app_global_get
+==
+// unauthorized
+assert
+bytec_1 // "currently_raised"
+app_global_get
+bytec_3 // "wager"
+app_global_get
+>=
+assert
+itxn_begin
+intc_1 // pay
+itxn_field TypeEnum
+global CurrentApplicationAddress
+itxn_field Sender
+txn Sender
+itxn_field Receiver
+bytec_3 // "wager"
+app_global_get
+intc_2 // 1000000
+*
+itxn_field Amount
+itxn_submit
+retsub
+
+// set_up_fundraiser_caster
+setupfundraisercaster_6:
+proto 0 0
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+intc_0 // 0
+getbyte
+frame_bury 2
+frame_dig 0
+frame_dig 1
+frame_dig 2
+callsub setupfundraiser_2
+retsub
+
+// approve_caster
+approvecaster_7:
+proto 0 0
+callsub approve_3
+retsub
+
+// donate_caster
+donatecaster_8:
+proto 0 0
+bytec_0 // ""
+intc_0 // 0
+txn GroupIndex
+intc_1 // 1
+-
+frame_bury 1
+frame_dig 1
+gtxns TypeEnum
+intc_1 // pay
+==
+assert
+frame_dig 1
+callsub donate_4
+frame_bury 0
+pushbytes 0x151f7c75 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// release_funds_caster
+releasefundscaster_9:
+proto 0 0
+callsub releasefunds_5
+retsub

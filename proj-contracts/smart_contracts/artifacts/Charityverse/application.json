@@ -1,0 +1,136 @@
+{
+    "hints": {
+        "set_up_fundraiser(uint64,string,account)void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "approve()void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "donate(pay)string": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "release_funds()void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMSAxMDAwMDAwCmJ5dGVjYmxvY2sgMHggMHg2Mzc1NzI3MjY1NmU3NDZjNzk1ZjcyNjE2OTczNjU2NCAweDZmNzI2NzYxNmU2OTdhNjE3NDY5NmY2ZSAweDc3NjE2NzY1NzIgMHg2MTcwNzA3MjZmNzY2NTY0NWY2Mjc5IDB4NjI2NTZlNjU2NjY5NjM2OTYxNzI3OSAweDYzNjE3NTczNjUKdHhuIE51bUFwcEFyZ3MKaW50Y18wIC8vIDAKPT0KYm56IG1haW5fbDEwCnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4NjE1MjJlOGYgLy8gInNldF91cF9mdW5kcmFpc2VyKHVpbnQ2NCxzdHJpbmcsYWNjb3VudCl2b2lkIgo9PQpibnogbWFpbl9sOQp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweGQ2MTFkYmQ4IC8vICJhcHByb3ZlKCl2b2lkIgo9PQpibnogbWFpbl9sOAp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDA4MWMwMjEzIC8vICJkb25hdGUocGF5KXN0cmluZyIKPT0KYm56IG1haW5fbDcKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHhlOTRhNDQ0ZCAvLyAicmVsZWFzZV9mdW5kcygpdm9pZCIKPT0KYm56IG1haW5fbDYKZXJyCm1haW5fbDY6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgcmVsZWFzZWZ1bmRzY2FzdGVyXzkKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDc6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgZG9uYXRlY2FzdGVyXzgKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDg6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgYXBwcm92ZWNhc3Rlcl83CmludGNfMSAvLyAxCnJldHVybgptYWluX2w5Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIHNldHVwZnVuZHJhaXNlcmNhc3Rlcl82CmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMDoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sMTQKdHhuIE9uQ29tcGxldGlvbgppbnRjXzEgLy8gT3B0SW4KPT0KYm56IG1haW5fbDEzCmVycgptYWluX2wxMzoKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KYXNzZXJ0CmNhbGxzdWIgb3B0aW5fMQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTQ6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCj09CmFzc2VydApjYWxsc3ViIGNyZWF0ZV8wCmludGNfMSAvLyAxCnJldHVybgoKLy8gY3JlYXRlCmNyZWF0ZV8wOgpwcm90byAwIDAKYnl0ZWMgNCAvLyAiYXBwcm92ZWRfYnkiCmJ5dGVjXzAgLy8gIiIKYXBwX2dsb2JhbF9wdXQKYnl0ZWMgNSAvLyAiYmVuZWZpY2lhcnkiCmJ5dGVjXzAgLy8gIiIKYXBwX2dsb2JhbF9wdXQKYnl0ZWMgNiAvLyAiY2F1c2UiCmJ5dGVjXzAgLy8gIiIKYXBwX2dsb2JhbF9wdXQKYnl0ZWNfMSAvLyAiY3VycmVudGx5X3JhaXNlZCIKaW50Y18wIC8vIDAKYXBwX2dsb2JhbF9wdXQKYnl0ZWNfMiAvLyAib3JnYW5pemF0aW9uIgpieXRlY18wIC8vICIiCmFwcF9nbG9iYWxfcHV0CmJ5dGVjXzMgLy8gIndhZ2VyIgppbnRjXzAgLy8gMAphcHBfZ2xvYmFsX3B1dApieXRlY18yIC8vICJvcmdhbml6YXRpb24iCnR4biBTZW5kZXIKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBvcHRfaW4Kb3B0aW5fMToKcHJvdG8gMCAwCmludGNfMSAvLyAxCnJldHVybgoKLy8gc2V0X3VwX2Z1bmRyYWlzZXIKc2V0dXBmdW5kcmFpc2VyXzI6CnByb3RvIDMgMAp0eG4gU2VuZGVyCmdsb2JhbCBDcmVhdG9yQWRkcmVzcwo9PQovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CnR4biBTZW5kZXIKYnl0ZWNfMiAvLyAib3JnYW5pemF0aW9uIgphcHBfZ2xvYmFsX2dldAo9PQphc3NlcnQKYnl0ZWNfMyAvLyAid2FnZXIiCmZyYW1lX2RpZyAtMwphcHBfZ2xvYmFsX3B1dApieXRlYyA2IC8vICJjYXVzZSIKZnJhbWVfZGlnIC0yCmV4dHJhY3QgMiAwCmFwcF9nbG9iYWxfcHV0CmJ5dGVjIDUgLy8gImJlbmVmaWNpYXJ5IgpmcmFtZV9kaWcgLTEKdHhuYXMgQWNjb3VudHMKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBhcHByb3ZlCmFwcHJvdmVfMzoKcHJvdG8gMCAwCnR4biBTZW5kZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbklECmFwcF9vcHRlZF9pbgovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CnR4biBTZW5kZXIKYnl0ZWNfMiAvLyAib3JnYW5pemF0aW9uIgphcHBfZ2xvYmFsX2dldAohPQphc3NlcnQKYnl0ZWMgNCAvLyAiYXBwcm92ZWRfYnkiCnR4biBTZW5kZXIKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBkb25hdGUKZG9uYXRlXzQ6CnByb3RvIDEgMQpieXRlY18wIC8vICIiCnR4biBTZW5kZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbklECmFwcF9vcHRlZF9pbgovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CmJ5dGVjIDQgLy8gImFwcHJvdmVkX2J5IgphcHBfZ2xvYmFsX2dldApieXRlY18wIC8vICIiCiE9CmFzc2VydApieXRlYyA2IC8vICJjYXVzZSIKYXBwX2dsb2JhbF9nZXQKYnl0ZWNfMCAvLyAiIgohPQphc3NlcnQKaW50Y18xIC8vIHBheQppbnRjXzEgLy8gcGF5Cj09CmFzc2VydApmcmFtZV9kaWcgLTEKZ3R4bnMgUmVjZWl2ZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKPT0KYXNzZXJ0CmJ5dGVjXzEgLy8gImN1cnJlbnRseV9yYWlzZWQiCmJ5dGVjXzEgLy8gImN1cnJlbnRseV9yYWlzZWQiCmFwcF9nbG9iYWxfZ2V0CmZyYW1lX2RpZyAtMQpndHhucyBBbW91bnQKaW50Y18yIC8vIDEwMDAwMDAKLworCmFwcF9nbG9iYWxfcHV0CnB1c2hieXRlcyAweDQ4NzY2MTZjNjEyMDU2NjE2ZDIwNmU2MTIwNjQ2ZjZlNjE2MzY5NmE2OSAvLyAiSHZhbGEgVmFtIG5hIGRvbmFjaWppIgpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIDAKbGVuCml0b2IKZXh0cmFjdCA2IDAKZnJhbWVfZGlnIDAKY29uY2F0CmZyYW1lX2J1cnkgMApyZXRzdWIKCi8vIHJlbGVhc2VfZnVuZHMKcmVsZWFzZWZ1bmRzXzU6CnByb3RvIDAgMAp0eG4gU2VuZGVyCmJ5dGVjIDUgLy8gImJlbmVmaWNpYXJ5IgphcHBfZ2xvYmFsX2dldAo9PQovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CmJ5dGVjXzEgLy8gImN1cnJlbnRseV9yYWlzZWQiCmFwcF9nbG9iYWxfZ2V0CmJ5dGVjXzMgLy8gIndhZ2VyIgphcHBfZ2xvYmFsX2dldAo+PQphc3NlcnQKaXR4bl9iZWdpbgppbnRjXzEgLy8gcGF5Cml0eG5fZmllbGQgVHlwZUVudW0KZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKaXR4bl9maWVsZCBTZW5kZXIKdHhuIFNlbmRlcgppdHhuX2ZpZWxkIFJlY2VpdmVyCmJ5dGVjXzMgLy8gIndhZ2VyIgphcHBfZ2xvYmFsX2dldAppbnRjXzIgLy8gMTAwMDAwMAoqCml0eG5fZmllbGQgQW1vdW50Cml0eG5fc3VibWl0CnJldHN1YgoKLy8gc2V0X3VwX2Z1bmRyYWlzZXJfY2FzdGVyCnNldHVwZnVuZHJhaXNlcmNhc3Rlcl82Ogpwcm90byAwIDAKaW50Y18wIC8vIDAKYnl0ZWNfMCAvLyAiIgppbnRjXzAgLy8gMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAxCmJ0b2kKZnJhbWVfYnVyeSAwCnR4bmEgQXBwbGljYXRpb25BcmdzIDIKZnJhbWVfYnVyeSAxCnR4bmEgQXBwbGljYXRpb25BcmdzIDMKaW50Y18wIC8vIDAKZ2V0Ynl0ZQpmcmFtZV9idXJ5IDIKZnJhbWVfZGlnIDAKZnJhbWVfZGlnIDEKZnJhbWVfZGlnIDIKY2FsbHN1YiBzZXR1cGZ1bmRyYWlzZXJfMgpyZXRzdWIKCi8vIGFwcHJvdmVfY2FzdGVyCmFwcHJvdmVjYXN0ZXJfNzoKcHJvdG8gMCAwCmNhbGxzdWIgYXBwcm92ZV8zCnJldHN1YgoKLy8gZG9uYXRlX2Nhc3Rlcgpkb25hdGVjYXN0ZXJfODoKcHJvdG8gMCAwCmJ5dGVjXzAgLy8gIiIKaW50Y18wIC8vIDAKdHhuIEdyb3VwSW5kZXgKaW50Y18xIC8vIDEKLQpmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKZ3R4bnMgVHlwZUVudW0KaW50Y18xIC8vIHBheQo9PQphc3NlcnQKZnJhbWVfZGlnIDEKY2FsbHN1YiBkb25hdGVfNApmcmFtZV9idXJ5IDAKcHVzaGJ5dGVzIDB4MTUxZjdjNzUgLy8gMHgxNTFmN2M3NQpmcmFtZV9kaWcgMApjb25jYXQKbG9nCnJldHN1YgoKLy8gcmVsZWFzZV9mdW5kc19jYXN0ZXIKcmVsZWFzZWZ1bmRzY2FzdGVyXzk6CnByb3RvIDAgMApjYWxsc3ViIHJlbGVhc2VmdW5kc181CnJldHN1Yg==",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 4,
+            "num_uints": 2
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {
+                "approved_by": {
+                    "type": "bytes",
+                    "key": "approved_by",
+                    "descr": "Trusted entity that approved the project"
+                },
+                "beneficiary": {
+                    "type": "bytes",
+                    "key": "beneficiary",
+                    "descr": "People in need"
+                },
+                "cause": {
+                    "type": "bytes",
+                    "key": "cause",
+                    "descr": "Cause"
+                },
+                "currently_raised": {
+                    "type": "uint64",
+                    "key": "currently_raised",
+                    "descr": "Currently raised funds"
+                },
+                "organization": {
+                    "type": "bytes",
+                    "key": "organization",
+                    "descr": "Charity organization"
+                },
+                "wager": {
+                    "type": "uint64",
+                    "key": "wager",
+                    "descr": "Recources needed"
+                }
+            },
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "Charityverse",
+        "methods": [
+            {
+                "name": "set_up_fundraiser",
+                "args": [
+                    {
+                        "type": "uint64",
+                        "name": "amount"
+                    },
+                    {
+                        "type": "string",
+                        "name": "cause"
+                    },
+                    {
+                        "type": "account",
+                        "name": "address"
+                    }
+                ],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "approve",
+                "args": [],
+                "returns": {
+                    "type": "void"
+                }
+            },
+            {
+                "name": "donate",
+                "args": [
+                    {
+                        "type": "pay",
+                        "name": "payment"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "release_funds",
+                "args": [],
+                "returns": {
+                    "type": "void"
+                }
+            }
+        ],
+        "networks": {},
+        "desc": "dApp for funding charitable causes"
+    },
+    "bare_call_config": {
+        "no_op": "CREATE",
+        "opt_in": "CALL"
+    }
+}
